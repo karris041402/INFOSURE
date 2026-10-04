@@ -1,0 +1,72 @@
+from enum import StrEnum
+
+from pydantic import BaseModel, Field
+
+
+class MLLabel(StrEnum):
+    RELIABLE = "Reliable"
+    MISINFORMATION = "Misinformation"
+
+
+class EvidenceLabel(StrEnum):
+    SUPPORTED = "Supported"
+    CONTRADICTED = "Contradicted"
+    INSUFFICIENT = "Insufficient Evidence"
+
+
+class UserFeedback(StrEnum):
+    AGREE = "Agree"
+    DISAGREE = "Disagree"
+    FLAG = "Flag"
+
+
+class Scope(StrEnum):
+    OUT_OF_SCOPE = "out_of_scope"
+    NO_VERIFIABLE_CLAIM = "no_verifiable_health_claim"
+    VERIFIED = "verified"
+
+
+class Assessment(StrEnum):
+    STRONG_SUPPORT = "Supported / strong agreement"
+    LIKELY_MISINFORMATION = "Likely misinformation / strong agreement"
+    CONFLICTING = "Conflicting assessment"
+    INSUFFICIENT = "Insufficient evidence / requires caution"
+
+
+class AnalyzeRequest(BaseModel):
+    text: str = Field(min_length=1, max_length=5000)
+
+
+class EvidenceItem(BaseModel):
+    evidence_id: int
+    evidence_text: str
+    source_name: str
+    source_url: str
+    publication_date: str | None = None
+    similarity: float
+
+
+class AnalyzeResponse(BaseModel):
+    scope: Scope
+    message: str | None = None
+    claim: str | None = None
+    ml_label: MLLabel | None = None
+    ml_confidence: float | None = None
+    evidence_result: EvidenceLabel | None = None
+    assessment: Assessment | None = None
+    evidence: list[EvidenceItem] = []
+    model_version: str | None = None
+
+
+class FeedbackRequest(BaseModel):
+    claim_text: str = Field(min_length=1, max_length=5000)
+    model_prediction: MLLabel
+    model_confidence: float | None = Field(default=None, ge=0, le=1)
+    evidence_result: EvidenceLabel | None = None
+    user_feedback: UserFeedback
+    model_version: str | None = None
+
+
+class FeedbackResponse(BaseModel):
+    feedback_id: int
+    review_status: str
