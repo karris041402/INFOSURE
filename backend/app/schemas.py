@@ -30,7 +30,9 @@ class Assessment(StrEnum):
     STRONG_SUPPORT = "Supported / strong agreement"
     LIKELY_MISINFORMATION = "Likely misinformation / strong agreement"
     CONFLICTING = "Conflicting assessment"
-    INSUFFICIENT = "Insufficient evidence / requires caution"
+    # No usable evidence: the model estimate is still shown, clearly marked as not verified.
+    UNVERIFIED_RELIABLE = "Not verified: model estimate is Reliable / use caution"
+    UNVERIFIED_MISINFORMATION = "Not verified: model estimate is Misinformation / use caution"
 
 
 class AnalyzeRequest(BaseModel):
@@ -44,6 +46,8 @@ class EvidenceItem(BaseModel):
     source_url: str
     publication_date: str | None = None
     similarity: float
+    relation: str | None = None  # entailment / neutral / contradiction (claim vs this passage)
+    relation_score: float | None = None
 
 
 class AnalyzeResponse(BaseModel):

@@ -1,0 +1,66 @@
+text,label,source,health_topic,unit,label_status,origin,language
+Bagong Pag-aaral: Pag-inom ng Tubig ay Mapapabuti ang Kalusugan - Ang mga health experts mula sa Department of Health ay nag-alok ng mga tip sa tamang hydration para sa araw-araw. Ang pagkain ng masustansiyang pagkain kasama ang regular na pag-inom ng tubig ay napatunayan ng maraming scientific studies na nakakatulong sa kalusugan.,Reliable,DOH,hydration,article_excerpt,legacy_unreviewed,legacy/health_news_data.csv,mixed
+Miraculous Cure: Dalang Hilot Ay Nakakalusot ng Sakit - Isang albularyo sa Laguna ay nag-claim na ang kanyang special massage technique ay makakagaling sa lahat ng uri ng sakit. Walang scientific basis pero maraming tao ang nagsasabi ng effective. Kumuha na ng appointment habang available pa.,Misinformation,social_media,traditional_medicine,article_excerpt,legacy_unreviewed,legacy/health_news_data.csv,mixed
+PhilHealth Reminder: Bakuna Laban sa COVID-19 at Influenza - Ang Philippine Health Insurance Corporation ay nag-update sa vaccination schedule. Lahat ng licensed health facilities ay nag-aalok ng free vaccines. Konsultahin ang inyong doktor para sa tamang timing.,Reliable,PhilHealth,vaccination,article_excerpt,legacy_unreviewed,legacy/health_news_data.csv,tl
+Secret Formula Discovered: 1 Ingredient Cure for Diabetes - Isang sikreto na itinago ng mga pharmaceutical companies ay natuklasan na! Isang simpleng sangkap ay makakagaling agad sa diabetes. Mga doktor hindi gustong malaman ito. Bili na ng premium kit ngayon habang may limited time offer pa.,Misinformation,social_media,diabetes,article_excerpt,legacy_unreviewed,legacy/health_news_data.csv,mixed
+Pag-aaral: Balancing Traditional at Modern Medicine - Ang UP College of Medicine ay nag-conduct ng research kung paano magsama ang traditional Filipino healing practices sa modern healthcare. Ilang folk remedies ay may potential health benefits pero kailangan ng proper study at medical supervision.,Reliable,academic,traditional_medicine,article_excerpt,legacy_unreviewed,legacy/health_news_data.csv,mixed
+"Taba ng Puso Lunas: Ilang Drops at Mawala ang Lahat ng Sakit - Isang viral post ay nag-claim na taba ng puso mula sa hayop ay pawedeng maglunas ng cancer, heart disease, at lahat pang sakit. Hindi ito scientifically proven at dangerous.",Misinformation,social_media,folk_remedy,article_excerpt,legacy_unreviewed,legacy/health_news_data.csv,tl
+RITM Announces New Screening Guidelines - Ang Research Institute for Tropical Medicine ay nag-release ng updated guidelines para sa tuberculosis screening. Lahat ay dapat sumusunod sa recommended protocols ng qualified medical professionals.,Reliable,RITM,screening,article_excerpt,legacy_unreviewed,legacy/health_news_data.csv,mixed
+Instant Cure: Manghihilot sa Barangay ay Gumagamit ng Supernatural Powers - Si Manang Rosa sa Maynila ay nag-alok na siya ay may supernatural healing abilities. Walang anumang medical credential pero maraming testimonials online. Limited slots available ngayong buwan.,Misinformation,social_media,supernatural,article_excerpt,legacy_unreviewed,legacy/health_news_data.csv,mixed
+"WHO Guidelines: Paano Makabawas ng Blood Pressure - Ang World Health Organization ay nag-publish ng evidence-based recommendations para sa blood pressure management. Kasama dito ang regular exercise, balanced diet, at stress management. Makipag-ugnayan sa inyong doctor para sa personalized plan.",Reliable,WHO,hypertension,article_excerpt,legacy_unreviewed,legacy/health_news_data.csv,tl
+Vaccine Side Effects Exposed - Government Conspiracy Revealed - Isang anonimous source ay nag-claim ng big cover-up tungkol sa vaccine dangers. Walang scientific evidence pero viral na ang story. Share agad bago ma-delete ng social media.,Misinformation,social_media,vaccination,article_excerpt,legacy_unreviewed,legacy/health_news_data.csv,tl
+"DOH Alert: Lumabas ang Bagong Protocol para sa Fever Treatment - Ang Department of Health ay nag-issue ng official guidelines para sa fever management, lalo na para sa mga bata. Ang tamang paggamot ay importante para sa patiyantalik ng infection.",Reliable,DOH,fever,article_excerpt,legacy_unreviewed,legacy/health_news_data.csv,mixed
+Ancient Herbal Formula from Mountains - NASA ng Cordillera ang isang rare plant na guaranteed na magpapaganda ng skin at lumalaki ng katawan. Napakahirap hanapin pero available na online. Order na may special discount ngayong linggo lang.,Misinformation,social_media,beauty_health,article_excerpt,legacy_unreviewed,legacy/health_news_data.csv,mixed
+Philippine General Hospital Launches Health Awareness Campaign - Ang PGH ay nag-start ng community outreach program para sa preventive healthcare. Free consultations at health screenings para sa lahat. Dumalo na sa inyong nearest health center.,Reliable,PGH,prevention,article_excerpt,legacy_unreviewed,legacy/health_news_data.csv,tl
+"Usog na Scientifically Explained - Ang ilan sa health professionals ay nag-explore kung bakit ang concept ng usog ay prevalent sa Filipino culture. Habang hindi ito medically recognized, stress at anxiety ay maaaring mag-cause ng physical symptoms.",Reliable,healthcare,cultural_belief,article_excerpt,legacy_unreviewed,legacy/health_news_data.csv,tl
+"Pasma Prevention: Rice Water at Salt - Isang trending tip sa TikTok ay nag-suggest ng washing with salt at rice water para prevent pasma. Habang walang scientific basis, ang ritual ay may cultural significance sa maraming Filipino families.",Misinformation,social_media,folk_remedy,article_excerpt,legacy_unreviewed,legacy/health_news_data.csv,mixed
+Drinking cold water causes pneumonia.,Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),en
+Bawang can cure any viral infection.,Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),en
+Lemon water can cure cancer.,Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),en
+"Kapag may lagnat, bawal maligo.",Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),tl
+Drinking soft drinks can cure fever.,Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),en
+Toothpaste can make burns heal faster.,Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),en
+Vitamin C can prevent all diseases.,Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),en
+Eating carrots can restore perfect eyesight.,Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),en
+Ginger tea can kill all bacteria in the body.,Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),en
+"Pag pawisin ka, ibig sabihin lumalabas lahat ng toxins sa katawan.",Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),tl
+Drinking bleach can kill viruses inside the body.,Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),en
+Natural supplements are always safe because they are herbal.,Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),en
+Garlic is a replacement for antibiotics.,Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),en
+Calamansi juice can replace all medicines.,Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),en
+Alkaline water can make your body immune to diseases.,Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),en
+Eating pineapple can dissolve tumors.,Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),en
+"Kapag may sipon, bawal uminom ng malamig na tubig.",Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),tl
+Coconut oil can cure all heart diseases.,Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),en
+Drinking coffee permanently lowers blood pressure.,Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),en
+Honey can cure every type of infection.,Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),en
+Putting garlic inside your socks can cure the flu.,Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),en
+Eating spicy food removes all parasites from the body.,Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),en
+Fasting for several days can cure any chronic disease.,Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),en
+Air conditioning directly causes tuberculosis.,Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),en
+Using a cellphone near your head definitely causes brain cancer.,Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),en
+Drinking lots of water can cure any disease within one day.,Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),en
+Vitamin C supplements guarantee that you will never get sick.,Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),en
+"Kapag masakit ang ulo, ibig sabihin kulang ka lang sa sugar.",Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),tl
+Hot water can kill cancer cells inside the body.,Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),en
+Vicks on the feet can cure cough.,Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),en
+Drinking vinegar every day prevents cancer.,Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),en
+Milk can cure every type of cough.,Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),en
+Energy drinks are healthier than water when you are sick.,Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),en
+Taking vitamins means you no longer need enough sleep.,Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),en
+Eating eggs every day will definitely cause heart disease.,Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),en
+Cold water after exercise can cause heart attacks.,Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),en
+Pineapple juice can remove all kidney stones.,Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),en
+Alcohol is always the best treatment for wounds.,Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),en
+"If a product is natural, it cannot have side effects.",Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),en
+Herbal tea can replace all prescribed medicines.,Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),en
+Drinking salt water cures all types of diarrhea.,Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),en
+You should wrap yourself in thick blankets to cure a fever.,Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),en
+Taking a bath after eating causes stroke.,Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),en
+Drinking milk tea makes your immune system strong against all viruses.,Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),en
+"If you have no symptoms, you cannot have any disease.",Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),en
+Drinking two liters of water at once is healthier than drinking water throughout the day.,Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),mixed
+Calamansi and honey can cure COVID-19 instantly.,Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),en
+Sweating can remove all diseases from your body.,Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),en
+A healthy person does not need vaccines.,Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),en
+Eating garlic every day guarantees protection from all viruses.,Misinformation,,,claim,proposed_needs_review,legacy/health_news_data.csv (unlabeled in source),en

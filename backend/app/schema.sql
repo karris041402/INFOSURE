@@ -13,7 +13,9 @@ CREATE TABLE IF NOT EXISTS evidence (
                         CHECK (review_status IN ('Pending', 'Validated', 'Rejected')),
     embedding_reference TEXT,
     created_at          TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%SZ', 'now')),
-    updated_at          TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%SZ', 'now'))
+    updated_at          TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%SZ', 'now')),
+    reviewed_by         TEXT,
+    reviewed_at         TEXT
 );
 CREATE INDEX IF NOT EXISTS idx_evidence_status ON evidence (review_status);
 

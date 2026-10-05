@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>InfoSure</title>
+    <link rel="stylesheet" href="sidepanel.css" />
+  </head>
+  <body>
+    <header class="top">
+      <div class="brand">
+        <svg class="logo" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6z" />
+          <path d="M9 12l2 2 4-4" />
+        </svg>
+        <div>
+          <h1>InfoSure</h1>
+          <p class="tagline" data-i18n="tagline"></p>
+        </div>
+      </div>
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" id="lang-en" data-lang="en">EN</button>
+        <button type="button" id="lang-tl" data-lang="tl">TL</button>
+      </div>
+    </header>
+
+    <section class="card input-card">
+      <label for="text"><span data-i18n="inputLabel"></span> </label>
+      <textarea
+        id="text"
+        rows="3"
+        maxlength="5000"
+        data-i18n-placeholder="inputPlaceholder"
+      ></textarea>
+      <div class="input-row">
+        <div id="connection" class="conn" aria-live="polite"></div>
+        <button id="check" type="button" class="primary">
+          <span data-i18n="check"></span>
+        </button>
+      </div>
+    </section>
+
+    <div id="status" role="status" aria-live="polite" hidden></div>
+    <main id="result" data-state="empty" aria-live="polite"></main>
+
+    <footer data-i18n="footer"></footer>
+    <script src="sidepanel.js"></script>
+  </body>
+</html>

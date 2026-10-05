@@ -14,11 +14,24 @@ def connect(path: Path | str | None = None) -> sqlite3.Connection:
     return conn
 
 
+# Columns added after the first release; applied to databases created before them.
+_ADDED_COLUMNS = {"evidence": [("reviewed_by", "TEXT"), ("reviewed_at", "TEXT")]}
+
+
+def _migrate(conn: sqlite3.Connection) -> None:
+    for table, columns in _ADDED_COLUMNS.items():
+        existing = {row[1] for row in conn.execute(f"PRAGMA table_info({table})")}
+        for name, decl in columns:
+            if name not in existing:
+                conn.execute(f"ALTER TABLE {table} ADD COLUMN {name} {decl}")
+
+
 def init_db(path: Path | str | None = None) -> None:
     db_path = Path(path or config.DB_PATH)
     db_path.parent.mkdir(parents=True, exist_ok=True)
     with connect(db_path) as conn:
         conn.executescript(SCHEMA_PATH.read_text(encoding="utf-8"))
+        _migrate(conn)
 
 
 def get_conn() -> Iterator[sqlite3.Connection]:

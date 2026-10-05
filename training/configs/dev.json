@@ -1,0 +1,40 @@
+{
+  "seed": 42,
+  "split": {
+    "train": 0.7,
+    "val": 0.15,
+    "test": 0.15,
+    "group_column": "url"
+  },
+  "tfidf": {
+    "ngram_range": [
+      1,
+      2
+    ],
+    "min_df": 1,
+    "max_features": 50000
+  },
+  "svm": {
+    "C": 1.0,
+    "class_weight": "balanced"
+  },
+  "nb": {
+    "alpha": 1.0
+  },
+  "selection_metric": "macro_f1",
+  "acceptance_gate": {
+    "min_macro_f1": 0.0,
+    "min_per_class_recall": 0.0
+  },
+  "transformer": {
+    "enabled": false,
+    "model_name": "xlm-roberta-base",
+    "max_length": 128,
+    "batch_size": 8,
+    "grad_accum_steps": 4,
+    "learning_rate": 2e-05,
+    "epochs": 3,
+    "fp16": true
+  },
+  "_note": "DEV ONLY: gate disabled to test the pipeline end to end. Models trained with this config must never be deployed."
+}

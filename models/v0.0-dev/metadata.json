@@ -1,0 +1,128 @@
+{
+  "model_version": "v0.0-dev",
+  "model_type": "svm",
+  "labels": [
+    "Reliable",
+    "Misinformation"
+  ],
+  "label_map": {
+    "Reliable": 0,
+    "Misinformation": 1
+  },
+  "training_date": "2026-10-04T17:57:35Z",
+  "dataset_version": "pubhealth_v1",
+  "dataset_sha256": "c3ddf2cdd38eb1235838bceb99a8158c66fc1d3c18a986f3956aa0389c377c62",
+  "acceptance_gate": {
+    "min_macro_f1": 0.0,
+    "min_per_class_recall": 0.0
+  },
+  "config": {
+    "seed": 42,
+    "split": {
+      "train": 0.7,
+      "val": 0.15,
+      "test": 0.15,
+      "group_column": "url"
+    },
+    "tfidf": {
+      "ngram_range": [
+        1,
+        2
+      ],
+      "min_df": 1,
+      "max_features": 50000
+    },
+    "svm": {
+      "C": 1.0,
+      "class_weight": "balanced"
+    },
+    "nb": {
+      "alpha": 1.0
+    },
+    "selection_metric": "macro_f1",
+    "acceptance_gate": {
+      "min_macro_f1": 0.0,
+      "min_per_class_recall": 0.0
+    },
+    "transformer": {
+      "enabled": false,
+      "model_name": "xlm-roberta-base",
+      "max_length": 128,
+      "batch_size": 8,
+      "grad_accum_steps": 4,
+      "learning_rate": 2e-05,
+      "epochs": 3,
+      "fp16": true
+    },
+    "_note": "DEV ONLY: gate disabled to test the pipeline end to end. Models trained with this config must never be deployed."
+  },
+  "metrics": {
+    "n": 607,
+    "accuracy": 0.7891268533772653,
+    "macro_precision": 0.7653529597974043,
+    "macro_recall": 0.7890802049463002,
+    "macro_f1": 0.7723020655053572,
+    "per_class": {
+      "Reliable": {
+        "precision": 0.8846153846153846,
+        "recall": 0.7892156862745098,
+        "f1": 0.8341968911917098,
+        "support": 408
+      },
+      "Misinformation": {
+        "precision": 0.6460905349794238,
+        "recall": 0.7889447236180904,
+        "f1": 0.7104072398190046,
+        "support": 199
+      }
+    },
+    "confusion_matrix": {
+      "labels": [
+        "Reliable",
+        "Misinformation"
+      ],
+      "matrix": [
+        [
+          322,
+          86
+        ],
+        [
+          42,
+          157
+        ]
+      ]
+    },
+    "error_examples": {
+      "false_positives": [
+        "I personally am pro-choice. I always have been. And I made no qualms about that when I was elected governor.",
+        "Michael Bloomberg Says “black babies die at rates twice as high as white babies because of a lack of access to affordable health care.”",
+        "In July 2017, it was announced that Finnish researchers would begin human trials of a Type 1 diabetes vaccine in 2018.",
+        "A doctor in Italy shared numerous details about how hospitals in the country are dealing with COVID-19, a disease caused by the new coronavirus.",
+        "President Trump last month proposed a $6 billion cut in funding to the National Institutes of Health. And thank God our congressmen made a deal last night to not go along with that. They actually increased funding by $2 billion.",
+        "A new study claims prostate cancer screenings significantly reduce deaths. Not everyone agrees",
+        "“It has been estimated that only 12% of workers in businesses that are likely to stay open during this crisis are receiving paid sick leave benefits as a result of the second coronavirus relief package.",
+        "A video clip shows former President Barack Obama stressing the need for U.S. pandemic preparedness in 2014.",
+        "The claim ... that we plan to set up panels of bureaucrats with the power to kill off senior citizens ... is a lie, plain and simple.",
+        "President Obama has broken his pledge to the American people to be transparent throughout (health care reform negotiations)."
+      ],
+      "false_negatives": [
+        "New Heart Imaging Method May Predict Heart Attack",
+        "Only three in 10 Texas doctors are currently accepting new Medicaid patients.",
+        "Preventive neuroradiology: Brain imaging bolsters efforts to lower Alzheimer's risk",
+        "Prolonged use of COVID-19-related face masks cause health problems due to breathing in too much exhaled carbon dioxide.",
+        "Embryo screening helps couples avoid genetic diseases",
+        "Multiple Studies Show Freespira® Eliminates Panic Attacks in 80% of Patients",
+        "New study shows supplementation of capsicum extract helps increase metabolic rate",
+        "Women need more sleep than men because their brains get more use on a day-to-day basis.",
+        "Pampers Dry Max diapers commonly cause severe diaper rash and chemical burns on infants.",
+        "Novartis drug cut death risk by 35 percent in gene mutation breast cancer"
+      ]
+    }
+  },
+  "libraries": {
+    "python": "3.13.2",
+    "scikit-learn": "1.9.0",
+    "pandas": "2.3.3",
+    "numpy": "2.3.5"
+  }
+}

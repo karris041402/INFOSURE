@@ -14,14 +14,19 @@ The system does not label a whole post real or fake. It finds health-related ver
 
 Fresh structure, built from the thesis docx. Old Flask project is gone.
 
+- `backend/app/deploy.py` — `py -m backend.app.deploy list|deploy VERSION [--allow-dev-model]|undeploy`. Only a model that passed its acceptance gate can be deployed; `pipeline/model_store.py` loads it behind a `Classifier` interface chosen by `model_type` (svm, nb now; add a loader for the transformer later).
+- `backend/app/review.py` — human validation CLI (`py -m backend.app.review evidence review --reviewer NAME`, `evidence set`, `feedback set`, `index build`). Only Validated evidence is retrievable; the vector index (`data/index/`, git-ignored) must be rebuilt after changes or `/analyze` returns 503. `pipeline/evidence_index.py` + `embeddings.py` do retrieval (multilingual MiniLM, `SIMILARITY_MIN` is a placeholder). Verification: `pipeline/nli.py` (mDeBERTa XNLI, premise=passage, hypothesis=claim) + `pipeline/verification.py` (aggregate: Supported/Contradicted need a confident passage with no strong opposite; conflict or weak = Insufficient). Threshold `NLI_MIN_CONFIDENCE` is a placeholder; evaluate with `py -m training.eval_verifier --split dev` (tune on dev, report test once).
 - `backend/app/` — FastAPI app and pipeline stages (health filter, claim detect/extract, ML predict, retrieve, verify, decide, explain).
 - `extension/` — Chrome extension, Manifest V3.
 - `training/` — offline training pipeline (split, train, tune, evaluate, package).
 - `data/evidence/` — validated evidence sources, separate from training data.
+- `data/raw/` — untouched scraper/download output. Never edit; never clean in place.
+- `training/prepare/` — dataset cleaning (`convert_pubhealth.py` builds `data/training/pubhealth_v0.csv` from raw PUBHEALTH; `clean.py`: drop bad rows, dedupe, tag language, write a NEW versioned CSV + report). Not model text preprocessing.
 - `data/training/` — labeled training datasets with provenance, versioned.
 - `models/` — versioned model artifacts (e.g. `models/v1.0/`).
 - `tests/` — tests for the new code.
 - `DOCUMENTATION/` — thesis spec (authoritative).
+- `training/` pipeline: `run.py` (entry: split → train → select on val → test once → gate → package), `split.py`, `classical.py` (SVM, NB), `transformer.py` (stub), `evaluate.py` (metrics + gate), `package.py` (writes `models/<version>/`, registers Candidate), `configs/default.json` (acceptance-gate numbers are placeholders). Run: `py -m training.run <clean csv> --version vX.Y`.
 - `training/scrapers/` — fact-check scrapers copied from the old project (VERA Files etc.). Untested here; they write output to the current directory.
 - `training/features/` — copied `health_lexicon.py`, `statistical_scoring.py`, `preprocessing.py` (needs `nltk`). Not wired into the pipeline.
 
@@ -56,7 +61,8 @@ Decision table:
 | Misinformation | Contradicted | Likely misinformation / strong agreement |
 | Reliable | Contradicted | Conflicting assessment |
 | Misinformation | Supported | Conflicting assessment |
-| Either | Insufficient | Insufficient evidence / requires caution |
+| Reliable | Insufficient | Not verified: model estimate is Reliable / use caution |
+| Misinformation | Insufficient | Not verified: model estimate is Misinformation / use caution |
 
 ### Components
 
@@ -64,6 +70,10 @@ Decision table:
 - **Evidence repository** (SQLite): `evidence_id`, `topic/normalized_claim`, `evidence_text`, `source_name`, `source_url`, `publication_date`, `review_status` (Pending/Validated/Rejected), `embedding_reference`, `created_at/updated_at`. Only `Validated` rows are retrievable. Embeddings from a sentence-transformer or equivalent.
 - **Feedback repository** (SQLite): `feedback_id`, `claim_text`, `model_prediction`, `model_confidence`, `evidence_result`, `user_feedback` (Agree/Disagree/Flag), `review_status`, `validated_label`, `model_version`, `created_at`.
 - **Tables**: `evidence`, `feedback`, `feedback_reviews`, `dataset_versions`, `model_versions`. Model files/checkpoints are versioned artifacts on disk, not DB rows.
+
+## Decisions and approval
+
+The user has decided that every decision and docx change made in this project is treated as approved. Do not add or ask for an adviser-approval step. The docx stays the spec, but record changes to it in `DOCUMENTATION/PROGRESS.md` and keep a backup in `DOCUMENTATION/archive/` before editing it.
 
 ## Hard rules (from thesis section 10)
 

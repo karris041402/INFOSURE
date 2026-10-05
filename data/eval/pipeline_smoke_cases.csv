@@ -1,0 +1,25 @@
+text,language,expected_scope,truth,note,label_status
+Drinking bleach cures COVID-19.,en,verified,false,docx example 16.4,author_proposed
+Exercise can improve cardiovascular health.,en,verified,true,docx example 16.4,author_proposed
+Vaccines cause autism.,en,verified,false,,author_proposed
+Washing hands with soap reduces the spread of infections.,en,verified,true,,author_proposed
+Antibiotics are effective against viral infections like the flu.,en,verified,false,,author_proposed
+Smoking increases the risk of lung cancer.,en,verified,true,,author_proposed
+Garlic can cure cancer.,en,verified,false,,author_proposed
+Drinking cold water causes pneumonia.,en,verified,false,,author_proposed
+Taking vitamin C prevents all diseases.,en,verified,false,,author_proposed
+Measles is highly contagious and can be prevented by vaccination.,en,verified,true,,author_proposed
+Ang bawang ay gamot sa kanser.,tl,verified,false,Tagalog claim,author_proposed
+Ang pagbabakuna ay nakakaiwas sa tigdas.,tl,verified,true,Tagalog claim,author_proposed
+"Kapag may lagnat, bawal maligo.",tl,verified,false,Taglish myth from seed data,author_proposed
+Ang paghuhugas ng kamay ay nakakatulong na maiwasan ang sakit.,tl,verified,true,,author_proposed
+Lemon water can cure cancer kapag iniinom araw-araw.,mixed,verified,false,Taglish,author_proposed
+I think this article is frightening.,en,out_of_scope,,"opinion but not health: health-domain check comes first (docx 3, step 2)",author_proposed
+Should I get the flu shot this year?,en,no_verifiable_health_claim,,"question, health-related",author_proposed
+I feel so tired after work today.,en,no_verifiable_health_claim,,"subjective, health-adjacent",author_proposed
+Sana gumaling na agad ang lola ko.,tl,no_verifiable_health_claim,,"wish, no claim",author_proposed
+What do you think about the new diet trend?,en,no_verifiable_health_claim,,question,author_proposed
+The stock market closed higher on Friday.,en,out_of_scope,,not health,author_proposed
+Manila is the capital of the Philippines.,en,out_of_scope,,not health; factual but out of scope,author_proposed
+Ang bagong pelikula ay palabas na sa sinehan.,tl,out_of_scope,,not health,author_proposed
+Click here to buy cheap shoes online now!,en,out_of_scope,,spam,author_proposed

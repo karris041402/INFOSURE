@@ -1,0 +1,20 @@
+{
+  "rows_out": 4047,
+  "dropped": {
+    "duplicate": 2
+  },
+  "class_counts": {
+    "Reliable": 2721,
+    "Misinformation": 1326
+  },
+  "language_counts": {
+    "en": 3771,
+    "mixed": 213,
+    "tl": 63
+  },
+  "unit_counts": {
+    "claim": 4047
+  },
+  "input": "data\\training\\pubhealth_v0.csv",
+  "rows_in": 4049
+}

@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "InfoSure",
+  "version": "0.3.0",
+  "description": "Check a highlighted health claim: model estimate plus evidence-based verification.",
+  "action": {
+    "default_title": "Open InfoSure"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "permissions": [
+    "sidePanel",
+    "scripting"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "all_frames": true,
+      "run_at": "document_idle"
+    }
+  ]
+}

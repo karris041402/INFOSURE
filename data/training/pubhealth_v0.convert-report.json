@@ -1,0 +1,10 @@
+{
+  "rows_in": 12292,
+  "after_label_filter (true/false only)": 10075,
+  "after_fact_checker_filter": 7674,
+  "after_health_filter": 4049,
+  "class_counts": {
+    "Reliable": 2723,
+    "Misinformation": 1326
+  }
+}

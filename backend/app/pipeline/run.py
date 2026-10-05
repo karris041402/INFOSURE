@@ -1,4 +1,4 @@
-from ..schemas import AnalyzeResponse, EvidenceLabel, Scope
+from ..schemas import AnalyzeResponse, Scope
 from . import stages
 from .decision import decide
 
@@ -18,7 +18,7 @@ def analyze(text: str) -> AnalyzeResponse:
     claim = stages.extract_claim(text)
     ml_label, ml_confidence, model_version = stages.classify(claim)
     evidence = stages.retrieve_evidence(claim)
-    evidence_result = stages.verify(claim, evidence) if evidence else EvidenceLabel.INSUFFICIENT
+    evidence_result, evidence = stages.verify(claim, evidence)
 
     return AnalyzeResponse(
         scope=Scope.VERIFIED,

@@ -4,6 +4,8 @@ from contextlib import asynccontextmanager
 from fastapi import Depends, FastAPI, HTTPException
 
 from . import db
+from .pipeline.evidence_index import EvidenceIndexStale
+from .pipeline.model_store import ModelNotAvailable
 from .pipeline.run import analyze
 from .schemas import AnalyzeRequest, AnalyzeResponse, FeedbackRequest, FeedbackResponse
 
@@ -26,6 +28,8 @@ def health() -> dict[str, str]:
 def analyze_text(req: AnalyzeRequest) -> AnalyzeResponse:
     try:
         return analyze(req.text)
+    except (ModelNotAvailable, EvidenceIndexStale) as exc:
+        raise HTTPException(status_code=503, detail=str(exc))
     except NotImplementedError as exc:
         raise HTTPException(status_code=501, detail=f"Not implemented: {exc}")
 

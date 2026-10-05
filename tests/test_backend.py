@@ -23,8 +23,8 @@ def client(tmp_path, monkeypatch):
         (MLLabel.MISINFORMATION, EvidenceLabel.CONTRADICTED, Assessment.LIKELY_MISINFORMATION),
         (MLLabel.RELIABLE, EvidenceLabel.CONTRADICTED, Assessment.CONFLICTING),
         (MLLabel.MISINFORMATION, EvidenceLabel.SUPPORTED, Assessment.CONFLICTING),
-        (MLLabel.RELIABLE, EvidenceLabel.INSUFFICIENT, Assessment.INSUFFICIENT),
-        (MLLabel.MISINFORMATION, EvidenceLabel.INSUFFICIENT, Assessment.INSUFFICIENT),
+        (MLLabel.RELIABLE, EvidenceLabel.INSUFFICIENT, Assessment.UNVERIFIED_RELIABLE),
+        (MLLabel.MISINFORMATION, EvidenceLabel.INSUFFICIENT, Assessment.UNVERIFIED_MISINFORMATION),
     ],
 )
 def test_decision_table(ml, ev, expected):
@@ -35,9 +35,10 @@ def test_health(client):
     assert client.get("/health").json() == {"status": "ok"}
 
 
-def test_analyze_not_implemented(client):
+def test_analyze_without_model_is_503(client, monkeypatch):
+    monkeypatch.delenv("INFOSURE_MODEL_VERSION", raising=False)
     r = client.post("/analyze", json={"text": "Garlic cures cancer."})
-    assert r.status_code == 501
+    assert r.status_code == 503
 
 
 def test_analyze_rejects_empty(client):
